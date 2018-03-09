@@ -1,0 +1,56 @@
+[
+  {
+    "value": "Bangalore",
+    "synonyms": [
+      "Bangalore",
+      "Bengaluru",
+      "bengaluru"
+    ]
+  },
+  {
+    "value": "Mangalore",
+    "synonyms": [
+      "Mangalore",
+      "Mangaluru",
+      "mangalore",
+      "mangalore"
+    ]
+  },
+  {
+    "value": "Mysore",
+    "synonyms": [
+      "Mysore"
+    ]
+  },
+  {
+    "value": "Hassan",
+    "synonyms": [
+      "Hassan",
+      "hassan"
+    ]
+  },
+  {
+    "value": "mangalore",
+    "synonyms": [
+      "mangalore"
+    ]
+  },
+  {
+    "value": "Hyderabad",
+    "synonyms": [
+      "Hyderabad",
+      "hyd",
+      "hyderabad"
+    ]
+  },
+  {
+    "value": "Anantapur",
+    "synonyms": [
+      "Anantapur",
+      "atp",
+      "anantapur",
+      "anantapuram",
+      "anantapuramu"
+    ]
+  }
+]

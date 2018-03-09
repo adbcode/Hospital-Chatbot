@@ -1,0 +1,44 @@
+{
+  "id": "b7b58f1f-865f-47aa-b744-fcce90c5dfc3",
+  "name": "LocationOfHospital",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "location.place",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "9e851da0-56f9-49c2-af33-aa250b7c0bf9",
+          "required": true,
+          "dataType": "@locations",
+          "name": "locations",
+          "value": "$locations",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter the name of city"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "The hospital is located at so and so place in $locations"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1520588024,
+  "fallbackIntent": false,
+  "events": []
+}

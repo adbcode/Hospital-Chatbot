@@ -1,0 +1,140 @@
+[
+  {
+    "id": "12d77b12-f56a-4d1f-b1e4-08e8897f2953",
+    "data": [
+      {
+        "text": "location in ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  },
+  {
+    "id": "c8bae71a-4daa-44d1-b6e7-fb6850c2a030",
+    "data": [
+      {
+        "text": "location in ",
+        "userDefined": false
+      },
+      {
+        "text": "bangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  },
+  {
+    "id": "2549c25e-19be-4a10-b2e5-10517863cc2a",
+    "data": [
+      {
+        "text": "location in ",
+        "userDefined": false
+      },
+      {
+        "text": "hassan",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  },
+  {
+    "id": "b42e7fbe-8014-47b7-9b85-3dc0f054aa12",
+    "data": [
+      {
+        "text": "hospital in ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  },
+  {
+    "id": "cdf26a43-4488-46a0-a0c3-3fead53d3728",
+    "data": [
+      {
+        "text": "location",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  },
+  {
+    "id": "11e79357-e500-4fcc-8e09-1025b0b3878b",
+    "data": [
+      {
+        "text": "loaction of ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  },
+  {
+    "id": "31d04f2d-71a2-4340-98d7-fbecc217427f",
+    "data": [
+      {
+        "text": "Can you tell me the location of Hospital?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  },
+  {
+    "id": "782bf6ad-1c5f-483d-8957-f4b9d6678a7f",
+    "data": [
+      {
+        "text": "hospital in",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  },
+  {
+    "id": "b579600b-9e99-42dd-8fe8-e9ba51b5c4f8",
+    "data": [
+      {
+        "text": "Where is the hospital located?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520587863
+  }
+]
