@@ -10,6 +10,10 @@ ai= apiai.ApiAI(CLIENT_ACCESS_TOKEN)
 
 @app.route('/')
 def Main():
+	req = request.get_json(silent=True, force=True)
+	
+	res = makeWebhookResult(req)
+	
     return render_template("homepage.html")
 
 
