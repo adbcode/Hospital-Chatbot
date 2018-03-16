@@ -1,0 +1,56 @@
+[
+  {
+    "id": "f4f61acb-8d5d-4123-bd4a-f070d6403189",
+    "data": [
+      {
+        "text": "show list of ",
+        "userDefined": false
+      },
+      {
+        "text": "dentistry",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1521197086
+  },
+  {
+    "id": "1d93fcdd-3c27-4038-811f-79a1c18bfa7d",
+    "data": [
+      {
+        "text": "doctors list on ",
+        "userDefined": false
+      },
+      {
+        "text": "dentistry",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1521197086
+  },
+  {
+    "id": "bc79cb8c-57b8-4573-a828-600f32aa24d7",
+    "data": [
+      {
+        "text": "list of doctors on ",
+        "userDefined": false
+      },
+      {
+        "text": "dentistry",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1521197086
+  }
+]
