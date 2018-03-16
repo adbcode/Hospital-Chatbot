@@ -1,0 +1,77 @@
+[
+  {
+    "value": "Dermatology",
+    "synonyms": [
+      "Dermatology",
+      "Skin Care",
+      "Skin Specialist"
+    ]
+  },
+  {
+    "value": "ENT",
+    "synonyms": [
+      "ENT",
+      "Ear nose Throat",
+      "Ear",
+      "nose",
+      "throat"
+    ]
+  },
+  {
+    "value": "Neurology",
+    "synonyms": [
+      "Neurology",
+      "neurology"
+    ]
+  },
+  {
+    "value": "Dentistry",
+    "synonyms": [
+      "Dentistry",
+      "Dentist"
+    ]
+  },
+  {
+    "value": "Urology",
+    "synonyms": [
+      "Urology"
+    ]
+  },
+  {
+    "value": "Spine care",
+    "synonyms": [
+      "Spine care",
+      "Spinal cord"
+    ]
+  },
+  {
+    "value": "Opthomology",
+    "synonyms": [
+      "Opthomology",
+      "Optho"
+    ]
+  },
+  {
+    "value": "General Surgery",
+    "synonyms": [
+      "General Surgery",
+      "Genral Surgery",
+      "General Surgeon"
+    ]
+  },
+  {
+    "value": "Cardiology",
+    "synonyms": [
+      "Cardiology",
+      "Cardio"
+    ]
+  },
+  {
+    "value": "Orthopedic",
+    "synonyms": [
+      "Orthopedic",
+      "OrthoCare",
+      "Ortho"
+    ]
+  }
+]
