@@ -1,0 +1,100 @@
+{
+  "id": "9c2c9d0c-789b-415b-b221-638586f8dd70",
+  "name": "appointments",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "8286fddc-f5b9-4957-90a3-5d9133cca6cb",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "pid",
+          "value": "$pid",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter patient id"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "447f757e-d740-4321-8d87-97bd1298d7bd",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "hid",
+          "value": "$hid",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter hospital id from the list"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "861b7326-8197-4a95-8155-c705338deb67",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "did",
+          "value": "$did",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter doctor id from the list"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "95222816-a966-411a-930d-de29d31ac1f7",
+          "required": false,
+          "name": "purpose",
+          "value": "$purpose",
+          "isList": false
+        },
+        {
+          "id": "c2883042-0a51-4ee9-a9a8-29ba9a557ee5",
+          "required": true,
+          "dataType": "@sys.date",
+          "name": "Date",
+          "value": "$Date",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter date and time"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "335091a7-e5ac-40e7-94f9-c5837f00aa9b",
+          "required": true,
+          "dataType": "@sys.time",
+          "name": "Time",
+          "value": "$Time",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "ok at $Date on $Time  booked"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1521197291,
+  "fallbackIntent": false,
+  "events": []
+}
