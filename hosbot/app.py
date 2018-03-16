@@ -1,19 +1,3 @@
-# -*- coding:utf8 -*-
-# !/usr/bin/env python
-# Copyright 2017 Google Inc. All Rights Reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 from __future__ import print_function
 from future.standard_library import install_aliases
 install_aliases()
@@ -22,16 +6,28 @@ from urllib.parse import urlparse, urlencode
 from urllib.request import urlopen, Request
 from urllib.error import HTTPError
 
+import apiai
 import json
 import os
+import sys
 
 from flask import Flask
 from flask import request
 from flask import make_response
 
+import sqlite3
+
 # Flask app should start in global layout
 app = Flask(__name__)
 
+CLIENT_ACCESS_TOKEN = 'c0dce7652e6b4a16b3e818ff84b78373'
+ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
+
+conn = sqlite3.connect('hospital.db')
+
+@app.route('/')
+def Main():
+    return render_template("homepage.html")
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -112,10 +108,59 @@ def makeWebhookResult(data):
         "source": "apiai-weather-webhook-sample"
     }
 
+# list of functions to be implemented
+# - booking appointments
+# - query doctors - their schedules, etc.
+# - query meds - info, availability, etc.
+# - basic medical help
+# - query hospital location, contact details, etc.
 
+# Booking appointments
+def book(data):
+	# Assuming data contains 
+	# PID, DID, HID, PURPOSE, ADATETIME, AFEE
+	# in that order
+	return "INSERT INTO APPOINTMENT(PID, DID, HID, PURPOSE, ADATETIME, AFEE) \
+		VALUES (%s, %s, %s, %s, %s, %s)", (data[0], data[1], data[2], data[3], data[4], data[5]))
+
+# Getting list of doctors of given specialty in a certain hospita
+def doctor_list(data):
+	# Assuming data contains
+	# HID, DSPECIAL
+	return "SELECT DNAME, DFEE FROM DOCTOR WHERE HID = %s AND DSPECIAL = %s", (data[0], data[1])
+
+# Get a doctor's schedule
+def doctor_schedule(data):
+	# Assuming data contains
+	# DID
+	return "SELECT WEEKDAY, TIME FROM DOCTOR WHERE DID = %s", (data[0])
+	
+# Query a medicine
+def medicine(data):
+	# Assuming data contains
+	# MID
+	return "SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = %s", (data[0])
+
+# Query basic medical help
+def medihelp(data):
+	# Assuming data contains
+	# SID
+	return "SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = SELECT SMED \
+		FROM SYMPTOMS WHERE SID = %s", (data[0])
+
+# Query hospital location, contact details
+def hospital(data):
+	# Assuming data contains
+	# HID
+	return "SELECT HLOCATION, HPHONE FROM HOSPITAL WHERE HID = %s", (data[0])
+
+#if __name__ == '__main__':
+#    port = int(os.getenv('PORT', 5000))
+#
+#   print("Starting app on port %d" % port)
+#
+#   app.run(debug=False, port=port, host='0.0.0.0')
+
+	
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))
-
-    print("Starting app on port %d" % port)
-
-    app.run(debug=False, port=port, host='0.0.0.0')
+    app.run(debug=True,ssl_context='adhoc')
