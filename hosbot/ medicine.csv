@@ -1,30 +1,30 @@
 MID,Medicine,Dosage,Cost
-,Dolo,Two times a day,
-,Paracetomal,Two times a day,
-,Aspirine,Two times a day,
-,Gabapentin,Once in the night,
-,Felicita Od,Once in the morning,
-,Calamine Lotion,Once in the night,
-,Fluconazole 150 mg Tabs,Two times a day,
-,Glibenclamide 2.5 mg Tab,Once in the night,
-,Gliclazide 40 mg Tabs,Two times a day,
-,Etoricoxilb 120mg Tab,Once in the morning,
-,Etoricoxilb 90mg Tab,Once in the night,
-,Insulin Injection,Once in the morning,
-,Pioglitazone 15 mg Tabs,Once in te morning,
-,Cisplatin 10 mg,Once in the night,
-,Ibuprofen 400mg,Once in the morning,
-,Doxorubicin 10 mg,Two times a day,
-,Gemcitabine 1000 mg,Once in the morning,
-,Tamoxifen Citrate 20 mg,Once in the morning,
-,Metronidazole 5 mg,Once in the morning,
-,Domperidone 10 mg Tabs,Two times a day,
-,Domperidone 5 mg.,Once in the morning,
-,Famotidine 40 mg Tabs,Once in the night,
-,Nimesulide 100 mg Tab,Once in the night,
-,Omeprazole 20 mg Tabs,Two times a day,
-,Ondansetron 2 mg/ml Inj,Once in the morning,
-,Ranitidine HCl,Two times a day,
-,Folic Acid 5mg Tabs,Once in the night,
-,Vitamin B-Complex NFI ,Once in the night,
-,Cetrizine,Once in the morning,
+,Dolo,Two times a day,10
+,Paracetomal,Two times a day,8
+,Aspirine,Two times a day,6
+,Gabapentin,Once in the night,282
+,Felicita Od,Once in the morning,230
+,Calamine Lotion,Once in the night,19
+,Fluconazole 150 mg Tabs,Two times a day,23
+,Glibenclamide 2.5 mg Tab,Once in the night,4
+,Gliclazide 40 mg Tabs,Two times a day,8
+,Etoricoxilb 120mg Tab,Once in the morning,25
+,Etoricoxilb 90mg Tab,Once in the night,20
+,Insulin Injection,Once in the morning,71
+,Pioglitazone 15 mg Tabs,Once in the morning,20
+,Cisplatin 10 mg,Once in the night,165
+,Ibuprofen 400mg,Once in the morning,6
+,Doxorubicin 10 mg,Two times a day,250
+,Gemcitabine 1000 mg,Once in the morning,60
+,Tamoxifen Citrate 20 mg,Once in the morning,15
+,Metronidazole 5 mg,Once in the morning,35
+,Domperidone 10 mg Tabs,Two times a day,60
+,Domperidone 5 mg.,Once in the morning,30
+,Famotidine 40 mg Tabs,Once in the night,34
+,Nimesulide 100 mg Tab,Once in the night,67
+,Omeprazole 20 mg Tabs,Two times a day,68
+,Ondansetron 2 mg/ml Inj,Once in the morning,45
+,Ranitidine HCl,Two times a day,65
+,Folic Acid 5mg Tabs,Once in the night,54
+,Vitamin B-Complex NFI ,Once in the night,68
+,Cetrizine,Once in the morning,25
