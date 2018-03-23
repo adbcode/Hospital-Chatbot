@@ -50,18 +50,16 @@ def makeWebhookResult(req):
 	# Query hospital location, contact details
 	if stri=="places":
 		result = req.get("result")
-		parameters = str(result.get("parameters"))
+		parameters = result.get("parameters")
 		location = str(parameters.get("locations"))
 		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
 		hid = dictionary[location.lower()]
-		conn.execute("SELECT HLOCATION FROM HOSPITAL WHERE HID = %d", (hid))
-		address = conn.fetchone()
-		conn.execute("SELECT HPHONE FROM HOSPITAL WHERE HID = %d", (hid))
-		contact = conn.fetchone()
-		if address is None:
+		cursor = conn.execute("SELECT HLOCATION, HPONE FROM HOSPITAL WHERE HID = %d", (hid))
+		data = cursor.fetchone()
+		if len(data) == 0:
 			speech = "There is no hospital in the given location."
 		else:
-			speech = "Hospital is located at: " + address + "\nContact Details: " + contact
+			speech = "Hospital is located at: " + data[0] + "\nContact Details: " + str(data[0])
 		print("Response:")
 		print(speech)
 		return {
@@ -83,8 +81,8 @@ def makeWebhookResult(req):
 		if speciality is None:
 			speciality = "*"
 			
-		conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = %d AND DSPECIAL = \"%s\"", (hid, speciality))
-		data = conn.fetchall()
+		cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = %d AND DSPECIAL = \"%s\"", (hid, speciality))
+		data = cursor.fetchall()
 		if len(data) == 0:
 			speech = "No doctors available for the given input."
 		else:
