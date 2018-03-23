@@ -49,6 +49,7 @@ def makeWebhookResult(req):
 
 	# Query hospital location, contact details
 	if stri=="places":
+		conn = sqlite3.connect('hospital.db')
 		result = req.get("result")
 		parameters = result.get("parameters")
 		location = str(parameters.get("locations"))
@@ -62,6 +63,7 @@ def makeWebhookResult(req):
 			speech = "There is no hospital in the given location."
 		print("Response:")
 		print(speech)
+		conn.close()
 		return {
 			"speech" : speech,
 			"displayText": speech,
@@ -70,29 +72,30 @@ def makeWebhookResult(req):
 		
 	# Getting list of doctors of given specialty in a certain hospital
 	if stri=="doctor.speciality":
-		parameters = result.get("parameters")
+		conn = sqlite3.connect('hospital.db')
 		result = req.get("result")
+		parameters = result.get("parameters")
 		location = str(parameters.get("locations"))
+		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
 		if location in dictionary.keys():
-			dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
 			hid = dictionary[location.lower()]
-		else hid = "*"
-		speciality = str(parameters.get("Doc_type"))
-		if speciality is None:
-			speciality = "*"
-			
-		cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = " + str(hid) " AND DSPECIAL = \"" + speciality + "\"")
-		data = cursor.fetchall()
-		if len(data) == 0:
-			speech = "No doctors available for the given input."
+			speciality = str(parameters.get("Doc_type"))
+			cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = " + str(hid) " AND DSPECIAL = \"" + speciality + "\"")
+			data = cursor.fetchall()
+			if len(data) == 0:
+				speech = "No doctors available for the given input."
+			else: 
+				speech = "#\tDoctor Name\t\tFee\n"
+				i=1
+				for name, fee in data:
+					speech = speech + str(i) + "\t" + name + "\t" + str(fee) + "\n"
+					i+=1
+
 		else:
-			speech = "#\tDoctor Name\t\tFee\n"  + ("-"*25) + "\n"
-			i=1
-			for name, fee in data:
-				speech = speech + i + "\t" + name + "\t" + fee + "\n"
-				i+=1
+			speech = "No doctors available for the given location."
 		print("Response:")
 		print(speech)
+		conn.close()
 		return {
 			"speech" : speech,
 			"displayText": speech,
