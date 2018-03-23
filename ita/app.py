@@ -89,7 +89,7 @@ def makeWebhookResult(req):
 		if location in dictionary.keys():
 			hid = dictionary[location.lower()]
 		else:
-			hid = "*"
+			hid = "1"
 		speciality = str(parameters.get("Doc_type"))
 		if speciality is None:
 			speciality = "*"
