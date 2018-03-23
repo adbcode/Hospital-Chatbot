@@ -51,10 +51,10 @@ def makeWebhookResult(req):
 	if stri=="places":
 		result = req.get("result")
 		parameters = result.get("parameters")
-		zone = parameters.get("locations")
-		conn.execute("SELECT HLOCATION FROM HOSPITAL WHERE HID = %s", (zone))
+		location = parameters.get("locations")
+		conn.execute("SELECT HLOCATION FROM HOSPITAL WHERE HID = %s", (location))
 		address = conn.fetchone()
-		conn.execute("SELECT HPHONE FROM HOSPITAL WHERE HID = %s", (zone))
+		conn.execute("SELECT HPHONE FROM HOSPITAL WHERE HID = %s", (location))
 		contact = conn.fetchone()
 		if address is None:
 			speech = "There is no hospital in the given location."
@@ -67,9 +67,39 @@ def makeWebhookResult(req):
 			"displayText": speech,
 			"source": "Healthmaster"
 		}
-	if stri=="medicine.availability":
-		result = req.get("result")
+		
+	# Getting list of doctors of given specialty in a certain hospital
+	if stri=="doctor.speciality":
 		parameters = result.get("parameters")
+		result = req.get("result")
+		location = parameters.get("locations")
+		speciality = parameters.get("Doc_type")
+		if location is None:
+			location = "*"
+		if speciality is None:
+			speciality = "*"
+			
+		conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = %s AND DSPECIAL = %s", (location, speciality))
+		data = conn.fetchall()
+		if len(data) == 0:
+			speech = "No doctors available for the given input."
+		else:
+			speech = "#\tDoctor Name\t\tFee\n"  + ("-"*25) + "\n"
+			i=1
+			for name, fee in data:
+				speech = speech + i + "\t" + name + "\t" + fee + "\n"
+				i+=1
+		print("Response:")
+		print(speech)
+		return {
+			"speech" : speech,
+			"displayText": speech,
+			"source": "Healthmaster"
+		}
+	
+	if stri=="medicine.availability":
+		parameters = result.get("parameters")
+		result = req.get("result")
 		zone = parameters.get("medicines")
 		speech = "The medicine details will be updated soon"
 		print("Response:")
@@ -103,42 +133,30 @@ def makeWebhookResult(req):
 if __name__ == '__main__':
     app.run(debug=True)#,ssl_context='adhoc')
 	
-	
+
 # Booking appointments
-def book(data):
+#def book(data):
 	# Assuming data contains 
 	# PID, DID, HID, PURPOSE, ADATETIME, AFEE
 	# in that order
-	return "INSERT INTO APPOINTMENT(PID, DID, HID, PURPOSE, ADATETIME, AFEE) \
-		VALUES (%s, %s, %s, %s, %s, %s)", (data[0], data[1], data[2], data[3], data[4], data[5]))
-
-# Getting list of doctors of given specialty in a certain hospital
-def doctor_list(data):
-	# Assuming data contains
-	# HID, DSPECIAL
-	return "SELECT DNAME, DFEE FROM DOCTOR WHERE HID = %s AND DSPECIAL = %s", (data[0], data[1])
+#	return "INSERT INTO APPOINTMENT(PID, DID, HID, PURPOSE, ADATETIME, AFEE) \
+#		VALUES (%s, %s, %s, %s, %s, %s)", (data[0], data[1], data[2], data[3], data[4], data[5]))
 
 # Get a doctor's schedule
-def doctor_schedule(data):
+#def doctor_schedule(data):
 	# Assuming data contains
 	# DID
-	return "SELECT WEEKDAY, TIME FROM DOCTOR WHERE DID = %s", (data[0])
+#	return "SELECT WEEKDAY, TIME FROM DOCTOR WHERE DID = %s", (data[0])
 	
 # Query a medicine
-def medicine(data):
+#def medicine(data):
 	# Assuming data contains
 	# MID
-	return "SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = %s", (data[0])
+#	return "SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = %s", (data[0])
 
 # Query basic medical help
-def medihelp(data):
+#def medihelp(data):
 	# Assuming data contains
 	# SID
-	return "SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = SELECT SMED \
-		FROM SYMPTOMS WHERE SID = %s", (data[0])
-
-# Query hospital location, contact details
-def hospital(data):
-	# Assuming data contains
-	# HID
-	return "SELECT HLOCATION, HPHONE FROM HOSPITAL WHERE HID = %s", (data[0])
+#	return "SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = SELECT SMED \
+#		FROM SYMPTOMS WHERE SID = %s", (data[0])
