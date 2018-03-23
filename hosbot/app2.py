@@ -54,12 +54,12 @@ def makeWebhookResult(req):
 		location = str(parameters.get("locations"))
 		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
 		hid = dictionary[location.lower()]
-		cursor = conn.execute("SELECT HLOCATION, HPONE FROM HOSPITAL WHERE HID = %d", (hid))
+		cursor = conn.execute("SELECT HLOCATION, HPHONE FROM HOSPITAL WHERE HID = " + str(hid))
 		data = cursor.fetchone()
 		if len(data) == 0:
 			speech = "There is no hospital in the given location."
 		else:
-			speech = "Hospital is located at: " + data[0] + "\nContact Details: " + str(data[0])
+			speech = "Hospital is located at: " + data[0] + "\nContact Details: " + str(data[1])
 		print("Response:")
 		print(speech)
 		return {
