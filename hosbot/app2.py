@@ -50,11 +50,13 @@ def makeWebhookResult(req):
 	# Query hospital location, contact details
 	if stri=="places":
 		result = req.get("result")
-		parameters = result.get("parameters")
-		location = parameters.get("locations")
-		conn.execute("SELECT HLOCATION FROM HOSPITAL WHERE HID = %s", (location))
+		parameters = str(result.get("parameters"))
+		location = str(parameters.get("locations"))
+		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
+		hid = dictionary[location.lower()]
+		conn.execute("SELECT HLOCATION FROM HOSPITAL WHERE HID = %d", (hid))
 		address = conn.fetchone()
-		conn.execute("SELECT HPHONE FROM HOSPITAL WHERE HID = %s", (location))
+		conn.execute("SELECT HPHONE FROM HOSPITAL WHERE HID = %d", (hid))
 		contact = conn.fetchone()
 		if address is None:
 			speech = "There is no hospital in the given location."
@@ -72,14 +74,16 @@ def makeWebhookResult(req):
 	if stri=="doctor.speciality":
 		parameters = result.get("parameters")
 		result = req.get("result")
-		location = parameters.get("locations")
-		speciality = parameters.get("Doc_type")
+		location = str(parameters.get("locations"))
+		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
+		hid = dictionary[location.lower()]
+		speciality = str(parameters.get("Doc_type"))
 		if location is None:
 			location = "*"
 		if speciality is None:
 			speciality = "*"
 			
-		conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = %s AND DSPECIAL = %s", (location, speciality))
+		conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = %d AND DSPECIAL = \"%s\"", (hid, speciality))
 		data = conn.fetchall()
 		if len(data) == 0:
 			speech = "No doctors available for the given input."
@@ -128,7 +132,6 @@ def makeWebhookResult(req):
 			"displayText": "Try again",
 			"source": "Healthmaster"
 		}
-
 
 if __name__ == '__main__':
     app.run(debug=True)#,ssl_context='adhoc')
