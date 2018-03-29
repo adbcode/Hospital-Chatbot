@@ -80,7 +80,7 @@ def makeWebhookResult(req):
 		if location in dictionary.keys():
 			hid = dictionary[location.lower()]
 			speciality = str(parameters.get("Doc_type"))
-			cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = " + str(hid) " AND DSPECIAL = \"" + speciality + "\"")
+			cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = " + str(hid) + " AND DSPECIAL = \"" + speciality + "\"")
 			data = cursor.fetchall()
 			if len(data) == 0:
 				speech = "No doctors available for the given input."
@@ -102,11 +102,17 @@ def makeWebhookResult(req):
 			"source": "Healthmaster"
 		}
 	
+	# Checking for medicine availability
 	if stri=="medicine.availability":
 		parameters = result.get("parameters")
 		result = req.get("result")
-		zone = parameters.get("medicines")
-		speech = "The medicine details will be updated soon"
+		medicine = str(parameters.get("medicines"))
+		cursor = conn.execute("SELECT MAVAIL FROM MEDICINE WHERE MNAME = " + medicine + "\"")
+		data = cursor.fetchone()
+		if int(data[0]) == 1:
+			speech = "The requested medicine is available."
+		else:
+			speech = "The requested medicine is currently unavailable."
 		print("Response:")
 		print(speech)
 		return {
@@ -114,6 +120,27 @@ def makeWebhookResult(req):
 			"displayText": speech,
 			"source": "Healthmaster"
 		}
+	
+	# Medicine info
+	if stri=="medicine.info":
+		parameters = result.get("parameters")
+		result = req.get("result")
+		medicine = str(parameters.get("medicines"))
+		cursor = conn.execute("SELECT MDOSAGE, MPRICE FROM MEDICINE WHERE MNAME = " + medicine + "\"")
+		data = cursor.fetchone()
+		if len(data) == 0:
+			speech = "The requested medicine is not present in the records."
+		else:
+			speech = medicine + "is to be taken " + data[0] + " and costs Rs. " + data[1] + "."
+		print("Response:")
+		print(speech)
+		return {
+			"speech" : speech,
+			"displayText": speech,
+			"source": "Healthmaster"
+		}
+		
+	# don't think we need this.
 	if stri=="doctor.speciality":
 		result = req.get("result")
 		parameters = result.get("parameters")
@@ -151,12 +178,6 @@ if __name__ == '__main__':
 	# Assuming data contains
 	# DID
 #	return "SELECT WEEKDAY, TIME FROM DOCTOR WHERE DID = %s", (data[0])
-	
-# Query a medicine
-#def medicine(data):
-	# Assuming data contains
-	# MID
-#	return "SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = %s", (data[0])
 
 # Query basic medical help
 #def medihelp(data):
