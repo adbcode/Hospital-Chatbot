@@ -118,7 +118,27 @@ def makeWebhookResult(req):
 		if len(data) == 0:
 			speech = "The requested medicine is not present in the records."
 		else:
-			speech = medicine + "is to be taken " + data[0] + " and costs Rs. " + data[1] + "."
+			speech = medicine + " is to be taken " + data[0].lower() + " and costs Rs. " + str(data[1]) + "."
+		print("Response:")
+		print(speech)
+		return {
+			"speech" : speech,
+			"displayText": speech,
+			"source": "Healthmaster"
+		}
+		
+	# Basic health help
+	if stri=="symptom":
+		conn = sqlite3.connect('hospital.db')
+		result = req.get("result")
+		parameters = result.get("parameters")
+		symptom = str(parameters.get("symptoms"))
+		cursor = conn.execute("SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = (SELECT SMED FROM SYMPTOMS WHERE SNAME = \"" + x.lower() + "\" LIMIT 1)")
+		data = cursor.fetchone()
+		if len(data) == 0:
+			speech = "Sorry but I am unable to help you with this health problem. Consider consulting an appropriate doctor."
+		else:
+			speech = "Please take " + data[0] + " " + data[1].lower() + ". The medicine will cost Rs. " + str(data[2]) + "."
 		print("Response:")
 		print(speech)
 		return {
