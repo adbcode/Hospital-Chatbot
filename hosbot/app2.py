@@ -30,23 +30,8 @@ def webhook():
 
 
 def makeWebhookResult(req):
-	#if req.get("result").get("action")!="interest":
-	#	return {}
 	stri = req.get("result").get("action")
-#	if stri=="interest":
-#		result = req.get("result")
-#		parameters = result.get("parameters")
-#		zone = parameters.get("bank-name")
-#		bank = {'Federal bank': '6.4%', 'Andhra bank': '10.56'}
-#		speech = "the intrest rate of " + zone + " " +str(bank[zone])
-#		print("Response:")
-#		print(speech)
-#		return {
-#			"speech" : speech,
-#			"displayText": speech,
-#			"source": "Healthmaster"
-#		}
-
+	
 	# Query hospital location, contact details
 	if stri=="places":
 		conn = sqlite3.connect('hospital.db')
@@ -104,10 +89,11 @@ def makeWebhookResult(req):
 	
 	# Checking for medicine availability
 	if stri=="medicine.availability":
-		parameters = result.get("parameters")
+		conn = sqlite3.connect('hospital.db')
 		result = req.get("result")
+		parameters = result.get("parameters")
 		medicine = str(parameters.get("medicines"))
-		cursor = conn.execute("SELECT MAVAIL FROM MEDICINE WHERE MNAME = " + medicine + "\"")
+		cursor = conn.execute("SELECT MAVAIL FROM MEDICINE WHERE MNAME = \"" + medicine + "\"")
 		data = cursor.fetchone()
 		if int(data[0]) == 1:
 			speech = "The requested medicine is available."
@@ -123,29 +109,16 @@ def makeWebhookResult(req):
 	
 	# Medicine info
 	if stri=="medicine.info":
-		parameters = result.get("parameters")
+		conn = sqlite3.connect('hospital.db')
 		result = req.get("result")
+		parameters = result.get("parameters")
 		medicine = str(parameters.get("medicines"))
-		cursor = conn.execute("SELECT MDOSAGE, MPRICE FROM MEDICINE WHERE MNAME = " + medicine + "\"")
+		cursor = conn.execute("SELECT MDOSAGE, MPRICE FROM MEDICINE WHERE MNAME = \"" + medicine + "\"")
 		data = cursor.fetchone()
 		if len(data) == 0:
 			speech = "The requested medicine is not present in the records."
 		else:
 			speech = medicine + "is to be taken " + data[0] + " and costs Rs. " + data[1] + "."
-		print("Response:")
-		print(speech)
-		return {
-			"speech" : speech,
-			"displayText": speech,
-			"source": "Healthmaster"
-		}
-		
-	# don't think we need this.
-	if stri=="doctor.speciality":
-		result = req.get("result")
-		parameters = result.get("parameters")
-		zone = parameters.get("Doc_type")
-		speech = "The doctors details will be updated soon"
 		print("Response:")
 		print(speech)
 		return {
