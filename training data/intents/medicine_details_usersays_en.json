@@ -1,0 +1,38 @@
+[
+  {
+    "id": "e8b362ac-15aa-47f8-bb9b-a82fef8b87ad",
+    "data": [
+      {
+        "text": "tell me details of ",
+        "userDefined": false
+      },
+      {
+        "text": "dolo",
+        "alias": "medicines",
+        "meta": "@medicines",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523006979
+  },
+  {
+    "id": "ab191635-bf4a-49ce-b7ba-d29700b9bc37",
+    "data": [
+      {
+        "text": "dolo",
+        "alias": "medicines",
+        "meta": "@medicines",
+        "userDefined": true
+      },
+      {
+        "text": " details",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523006979
+  }
+]

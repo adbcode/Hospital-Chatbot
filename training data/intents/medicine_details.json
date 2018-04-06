@@ -1,0 +1,38 @@
+{
+  "id": "fb5c0a65-32fc-4e6e-ab11-21f5a13bfb4b",
+  "name": "medicine_details",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "medicine.info",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "5ca89d64-d776-41ec-be75-da031e5e35dc",
+          "required": true,
+          "dataType": "@medicines",
+          "name": "medicines",
+          "value": "$medicines",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "hi yo"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1523008840,
+  "fallbackIntent": false,
+  "events": []
+}
