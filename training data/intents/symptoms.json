@@ -1,0 +1,49 @@
+{
+  "id": "833dffc9-d823-4f19-a2a1-49bfe496729d",
+  "name": "symptoms",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "symptom",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "2669d45e-0679-4c2e-8925-29f7d75bd675",
+          "required": true,
+          "dataType": "@symptoms",
+          "name": "symptoms",
+          "value": "$symptoms",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter your symptoms"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "hii"
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "ok"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1523012507,
+  "fallbackIntent": false,
+  "events": []
+}
