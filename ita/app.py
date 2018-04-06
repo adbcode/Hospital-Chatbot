@@ -13,7 +13,7 @@ app = Flask(__name__)
 CLIENT_ACCESS_TOKEN = 'c0dce7652e6b4a16b3e818ff84b78373'
 
 ai= apiai.ApiAI(CLIENT_ACCESS_TOKEN)
-conn = sqlite3.connect('hospital.db')
+conn = sqlite3.connect('hospital1.db')
 
 @app.route('/')
 def main():
@@ -56,7 +56,7 @@ def makeWebhookResult(req):
 		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
 		if location in dictionary.keys():
 			hid = dictionary[location.lower()]
-			conn = sqlite3.connect('hospital.db')
+			conn = sqlite3.connect('hospital1.db')
 			cursor = conn.execute("SELECT HLOCATION, HPHONE FROM HOSPITAL WHERE HID = " + str(hid))
 			data = cursor.fetchone()
 			speech = "Hospital is located at: " + data[0] + "\nContact Details: " + str(data[1])
@@ -70,10 +70,16 @@ def makeWebhookResult(req):
 			"source": "Healthmaster"
 		}
 	if stri=="medicine.availability":
+		conn = sqlite3.connect('hospital1.db')
 		result = req.get("result")
 		parameters = result.get("parameters")
-		zone = parameters.get("medicines")
-		speech = "The medicine details will be updated soon"
+		medicine = str(parameters.get("medicines"))
+		cursor = conn.execute("SELECT MAVAIL FROM MEDICINE WHERE MNAME = \"" + medicine + "\"")
+		data = cursor.fetchone()
+		if int(data[0]) == 1:
+			speech = "The requested medicine is available."
+		else:
+			speech = "The requested medicine is currently unavailable."
 		print("Response:")
 		print(speech)
 		return {
@@ -82,29 +88,47 @@ def makeWebhookResult(req):
 			"source": "Healthmaster"
 		}
 	if stri=="doctor.speciality":
+		conn = sqlite3.connect('hospital1.db')
 		result = req.get("result")
 		parameters = result.get("parameters")
 		location = str(parameters.get("locations"))
 		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
 		if location in dictionary.keys():
 			hid = dictionary[location.lower()]
+			speciality = str(parameters.get("Doc_type"))
+			cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = " + str(hid) + " AND DSPECIAL = \"" + speciality + "\"")
+			data = cursor.fetchall()
+			if len(data) == 0:
+				speech = "No doctors available for the given input."
+			else: 
+				speech = "#\tDoctor Name\t\tFee\n"
+				i=1
+				for name, fee in data:
+					speech = speech + str(i) + "\t" + name + "\t" + str(fee) + "\n"
+					i+=1
+
 		else:
-			hid = "1"
-		speciality = str(parameters.get("Doc_type"))
-		if speciality is None:
-			speciality = "*"
-		
-		conn = sqlite3.connect('hospital.db')
-		cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = " + str(hid) +" AND DSPECIAL = \"" + speciality + "\"")
-		data = cursor.fetchall()
+			speech = "No doctors available for the given location."
+		print("Response:")
+		print(speech)
+		conn.close()
+		return {
+			"speech" : speech,
+			"displayText": speech,
+			"source": "Healthmaster"
+		}
+	
+	if stri=="medicine.info":
+		conn = sqlite3.connect('hospital1.db')
+		result = req.get("result")
+		parameters = result.get("parameters")
+		medicine = str(parameters.get("medicines"))
+		cursor = conn.execute("SELECT MDOSAGE, MPRICE FROM MEDICINE WHERE MNAME = \"" + medicine+"\"")
+		data = cursor.fetchone()
 		if len(data) == 0:
-			speech = "No doctors available for the given input."
+			speech = "The requested medicine is not present in the records."
 		else:
-			speech = "#\tDoctor Name\t\tFee\n" +  "\n"
-			i=1
-			for name, fee in data:
-				speech = speech + str(i) + "\t" + name + "\t" + str(fee) + "\n"
-				i+=1
+			speech = medicine + " is to be taken " + str(data[0]).lower() + " and costs Rs. " + str(data[1]) + "."
 		print("Response:")
 		print(speech)
 		return {
@@ -112,6 +136,22 @@ def makeWebhookResult(req):
 			"displayText": speech,
 			"source": "Healthmaster"
 		}
+	
+	if stri=="symptom":
+		speech1 = "hi"
+		speech2 = "ok"
+		
+		return {
+			"speech": "",
+			"messages":[
+			{
+			"type": 0,
+			"speech": ""
+			},
+			],
+			"source": "Healthmaster"
+		}
+	
 	
 	else:
 		return {
