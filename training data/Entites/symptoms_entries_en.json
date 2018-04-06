@@ -1,0 +1,138 @@
+[
+  {
+    "value": "cold",
+    "synonyms": [
+      "cold"
+    ]
+  },
+  {
+    "value": "headache",
+    "synonyms": [
+      "headache",
+      "head ache",
+      "head-ache"
+    ]
+  },
+  {
+    "value": "fever",
+    "synonyms": [
+      "fever",
+      "Fever"
+    ]
+  },
+  {
+    "value": "legpain",
+    "synonyms": [
+      "legpain",
+      "left leg pain",
+      "right leg pain",
+      "pain in both legs"
+    ]
+  },
+  {
+    "value": "cough",
+    "synonyms": [
+      "cough",
+      "coughing"
+    ]
+  },
+  {
+    "value": "severe leg pain",
+    "synonyms": [
+      "severe leg pain"
+    ]
+  },
+  {
+    "value": "skin irritation",
+    "synonyms": [
+      "skin irritation"
+    ]
+  },
+  {
+    "value": "painkiller",
+    "synonyms": [
+      "painkiller"
+    ]
+  },
+  {
+    "value": "numbness",
+    "synonyms": [
+      "numbness",
+      "numness",
+      "numbing"
+    ]
+  },
+  {
+    "value": "pain",
+    "synonyms": [
+      "pain"
+    ]
+  },
+  {
+    "value": "cramps",
+    "synonyms": [
+      "cramps",
+      "muscle ache"
+    ]
+  },
+  {
+    "value": "cancer",
+    "synonyms": [
+      "cancer"
+    ]
+  },
+  {
+    "value": "digestive",
+    "synonyms": [
+      "digestive",
+      "digestive disorder"
+    ]
+  },
+  {
+    "value": "menustration",
+    "synonyms": [
+      "menustration"
+    ]
+  },
+  {
+    "value": "Vomiting",
+    "synonyms": [
+      "Vomting"
+    ]
+  },
+  {
+    "value": "diabetes",
+    "synonyms": [
+      "diabetes",
+      "sugar problem"
+    ]
+  },
+  {
+    "value": "swelling",
+    "synonyms": [
+      "swelling"
+    ]
+  },
+  {
+    "value": "fungal infection",
+    "synonyms": [
+      "fungal infection",
+      "fungus"
+    ]
+  },
+  {
+    "value": "gastric problem",
+    "synonyms": [
+      "gastric problem",
+      "gastric",
+      "gas"
+    ]
+  },
+  {
+    "value": "bacteria",
+    "synonyms": [
+      "bacteria",
+      "bacteraia"
+    ]
+  }
+]
