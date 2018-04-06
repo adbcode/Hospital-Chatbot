@@ -171,10 +171,3 @@ if __name__ == '__main__':
 	# Assuming data contains
 	# DID
 #	return "SELECT WEEKDAY, TIME FROM DOCTOR WHERE DID = %s", (data[0])
-
-# Query basic medical help
-#def medihelp(data):
-	# Assuming data contains
-	# SID
-#	return "SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = SELECT SMED \
-#		FROM SYMPTOMS WHERE SID = %s", (data[0])
