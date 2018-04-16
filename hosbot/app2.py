@@ -133,7 +133,7 @@ def makeWebhookResult(req):
 		result = req.get("result")
 		parameters = result.get("parameters")
 		symptom = str(parameters.get("symptoms"))
-		cursor = conn.execute("SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = (SELECT SMED FROM SYMPTOMS WHERE SNAME = \"" + x.lower() + "\" LIMIT 1)")
+		cursor = conn.execute("SELECT MNAME, MDOSAGE, MPRICE FROM MEDICINE WHERE MID = (SELECT SMED FROM SYMPTOMS WHERE SNAME = \"" + symptom.lower() + "\" LIMIT 1)")
 		data = cursor.fetchone()
 		if len(data) == 0:
 			speech = "Sorry but I am unable to help you with this health problem. Consider consulting an appropriate doctor."
@@ -141,6 +141,33 @@ def makeWebhookResult(req):
 			speech = "Please take " + data[0] + " " + data[1].lower() + ". The medicine will cost Rs. " + str(data[2]) + "."
 		print("Response:")
 		print(speech)
+		return {
+			"speech" : speech,
+			"displayText": speech,
+			"source": "Healthmaster"
+		}
+	
+	# Creating a new patient profile
+	if stri=="patient.new":
+		conn = sqlite3.connect('hospital.db')
+		result = req.get("result")
+		parameters = result.get("parameters")
+		name = str(parameters.get("name"))
+		age = str(parameters.get("age"))
+		sex = str(parameters.get("sex"))
+		cursor = conn.execute("SELECT PID FROM PATIENT WHERE PNAME = \"" + name + "\" AND PAGE = " + age + " AND PSEX = \"" + sex + "\"")
+		data = cursor.fetchall()
+		if len(data) == 0:
+			cursor = conn.execute("INSERT INTO PATIENT (PNAME, PAGE, PSEX) VALUES (\'" + name + "\', " + age + ", \'" + sex + "\')")
+			cursor = conn.execute("SELECT PID FROM PATIENT WHERE PNAME = \"" + name + "\" AND PAGE = " + age + " AND PSEX = \"" + sex + "\"")
+			data = cursor.fetchone()
+			speech = "New patient profile created. Your patient id is: " + str(data[0]) + "."
+		else: 
+			speech = "Profile already exists. Your patient id is: " + str(data[0][0]) + "."
+		print("Response:")
+		print(speech)
+		conn.commit()
+		conn.close()
 		return {
 			"speech" : speech,
 			"displayText": speech,
