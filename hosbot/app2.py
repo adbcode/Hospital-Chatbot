@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 CLIENT_ACCESS_TOKEN = 'c0dce7652e6b4a16b3e818ff84b78373'
 
-ai= apiai.ApiAI(CLIENT_ACCESS_TOKEN)
+ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
 conn = sqlite3.connect('hospital.db')
 
 @app.route('/')
@@ -200,11 +200,11 @@ def makeWebhookResult(req):
 				
 				if len(data) != 0:
 					DateTime = date + " " + time
-					cursor = conn.execute("SELECT * FROM APPOINTMENT WHERE DID = " + did + " AND ADATETIME = \"" + DateTime + "\" AND HID = " + HID)
+					cursor = conn.execute("SELECT PID FROM APPOINTMENT WHERE DID = " + did + " AND ADATETIME = \"" + DateTime + "\" AND HID = " + HID)
 					data = cursor.fetchall()
 					
 					if len(data) != 0:
-						if location in data:
+						if pid in data:
 							speech = "Your appointment is already booked for the given time and doctor."
 						else:
 							speech = "The requested doctor already has appointment in the given time. Please book for another time."
@@ -247,18 +247,3 @@ def makeWebhookResult(req):
 
 if __name__ == '__main__':
     app.run(debug=True)#,ssl_context='adhoc')
-	
-
-# Booking appointments
-#def book(data):
-	# Assuming data contains 
-	# PID, DID, HID, PURPOSE, ADATETIME, AFEE
-	# in that order
-#	return "INSERT INTO APPOINTMENT(PID, DID, HID, PURPOSE, ADATETIME, AFEE) \
-#		VALUES (%s, %s, %s, %s, %s, %s)", (data[0], data[1], data[2], data[3], data[4], data[5]))
-
-# Get a doctor's schedule
-#def doctor_schedule(data):
-	# Assuming data contains
-	# DID
-#	return "SELECT WEEKDAY, TIME FROM DOCTOR WHERE DID = %s", (data[0])
