@@ -1,19 +1,25 @@
 import sqlite3
 
 conn = sqlite3.connect('hospital.db')
-dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
-hid = dictionary["Mangalore".lower()]
-speciality = "Urology"
-cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = " + str(hid) + " AND DSPECIAL = \"" + speciality + "\"")
+name = "Aditya B"
+age = "20"
+sex = "M"
+cursor = conn.execute("SELECT PID FROM PATIENT WHERE PNAME = \"" + name + "\" AND PAGE = " + age + " AND PSEX = \"" + sex + "\"")
 data = cursor.fetchall()
+print data
 if len(data) == 0:
-	speech = "No doctors available for the given input."
+	cursor = conn.execute("INSERT INTO PATIENT (PNAME, PAGE, PSEX) VALUES (\'" + name + "\', " + age + ", \'" + sex + "\')")
+	cursor = conn.execute("SELECT PID FROM PATIENT WHERE PNAME = \"" + name + "\" AND PAGE = " + age + " AND PSEX = \"" + sex + "\"")
+	data = cursor.fetchone()
+	speech = "New patient profile created. Your patient id is: " + str(data[0]) + "."
 else: 
-	speech = "#\tDoctor Name\t\tFee\n"
-	i=1
-	for name, fee in data:
-		speech = speech + str(i) + "\t" + name + "\t" + str(fee) + "\n"
-		i+=1
-print speech
+	speech = "Profile already exists. Your patient id is: " + str(data[0][0]) + "."
+print("Response:")
+print(speech)
 
+cursor = conn.execute("SELECT * FROM PATIENT WHERE PNAME = \"" + name + "\" AND PAGE = " + age + " AND PSEX = \"" + sex + "\"")
+data = cursor.fetchall()
+print data
+
+conn.commit()
 conn.close()
