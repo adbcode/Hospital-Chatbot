@@ -12,6 +12,8 @@ CLIENT_ACCESS_TOKEN = 'c0dce7652e6b4a16b3e818ff84b78373'
 
 ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
 conn = sqlite3.connect('hospital.db')
+dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
+
 
 @app.route('/')
 def main():
@@ -39,8 +41,7 @@ def makeWebhookResult(req):
 		result = req.get("result")
 		parameters = result.get("parameters")
 		location = str(parameters.get("locations"))
-		if location in dictionary.keys():
-			dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
+		if location.lower() in dictionary.keys():
 			hid = dictionary[location.lower()]
 			cursor = conn.execute("SELECT HLOCATION, HPHONE FROM HOSPITAL WHERE HID = " + str(hid))
 			data = cursor.fetchone()
@@ -62,8 +63,8 @@ def makeWebhookResult(req):
 		result = req.get("result")
 		parameters = result.get("parameters")
 		location = str(parameters.get("locations"))
-		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
-		if location in dictionary.keys():
+
+		if location.lower() in dictionary.keys():
 			hid = dictionary[location.lower()]
 			speciality = str(parameters.get("Doc_type"))
 			cursor = conn.execute("SELECT DNAME, DFEE FROM DOCTOR WHERE HID = " + str(hid) + " AND DSPECIAL = \"" + speciality + "\"")
@@ -187,9 +188,7 @@ def makeWebhookResult(req):
 		purpose = str(parameters.get("purpose"))
 		location = str(parameters.get("locations"))
 		
-		dictionary = {"mangalore" : 1, "panaji" : 2, "jaipur" : 3, "salem" : 4, "vijayawada" : 5}
-		
-		if location in dictionary.keys():
+		if location.lower() in dictionary.keys():
 			hid = str(dictionary[location.lower()])
 			cursor = conn.execute("SELECT * FROM DOCTOR WHERE DID = " + did + " AND HID = " + hid)
 			data = cursor.fetchall()
@@ -211,7 +210,7 @@ def makeWebhookResult(req):
 					
 					else:
 						m = datetime.datetime.strptime(date,'%Y-%m-%d').strftime('%A')
-						cursor = conn.execute("SELECT TIME FROM AVAILABLE WHERE DID = " + did + " AND WEEKDAY = " + m)
+						cursor = conn.execute("SELECT TIME FROM AVAILABLE WHERE DID = " + did + " AND WEEKDAY = \"" + m + "\"")
 						time_variable = cursor.fetchall()[0]
 						time1, time2 = time_variable.split("-")
 						timeA = datetime.datetime.strptime(time1, "%H:%M:%S")
@@ -219,6 +218,7 @@ def makeWebhookResult(req):
 						timeC = datetime.datetime.strptime(time, "%H:%M:%S")
 						if timeC >timeA and timeC < timeB:
 							cursor = conn.execute("INSERT INTO APPOINTMENT(PID, DID, HID, PURPOSE, ADATETIME, AFEE) VALUES(" + pid + ", " + did + ", " + hid + ", \"" + purpose + "\", \"" + DateTime + "\", 0)")
+							speech = "Your appointment is booked at "+ time +" on "+ date
 						else:
 							speech = "The requested doctor is unavailable at the requested time. Please book for another time."
 				else:
