@@ -1,0 +1,102 @@
+[
+  {
+    "id": "451e6899-905f-4431-8d99-b4b7ddf90eda",
+    "data": [
+      {
+        "text": "severe ",
+        "userDefined": false
+      },
+      {
+        "text": "pain",
+        "alias": "symptoms",
+        "meta": "@symptoms",
+        "userDefined": true
+      },
+      {
+        "text": " in legs",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523012507
+  },
+  {
+    "id": "8ff4e4b6-84df-41bf-b917-f9d68e9c418c",
+    "data": [
+      {
+        "text": "can u suggest me tablets",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523012507
+  },
+  {
+    "id": "0e9463e9-4388-423b-829f-7c6d81f8e682",
+    "data": [
+      {
+        "text": "i have a problem",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523012507
+  },
+  {
+    "id": "170ef510-5a73-44fd-a2c7-40fe2f1c7dde",
+    "data": [
+      {
+        "text": "numbness",
+        "alias": "symptoms",
+        "meta": "@symptoms",
+        "userDefined": true
+      },
+      {
+        "text": " in hands and legs",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523012507
+  },
+  {
+    "id": "148a85a2-27cc-4918-b36c-08dff86facc8",
+    "data": [
+      {
+        "text": "i am suffering from ",
+        "userDefined": false
+      },
+      {
+        "text": "headache",
+        "alias": "symptoms",
+        "meta": "@symptoms",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523012507
+  },
+  {
+    "id": "f9c14943-1903-4956-b479-cbecf2850a77",
+    "data": [
+      {
+        "text": "I have ",
+        "userDefined": false
+      },
+      {
+        "text": "cold",
+        "alias": "symptoms",
+        "meta": "@symptoms",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523012507
+  }
+]

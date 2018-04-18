@@ -1,0 +1,112 @@
+[
+  {
+    "id": "57cf3d19-1275-45d2-80f5-3ff819746b2b",
+    "data": [
+      {
+        "text": "Is paracitmol available.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1518773282
+  },
+  {
+    "id": "fe9a9803-0181-47e6-a95b-3997eeb357a4",
+    "data": [
+      {
+        "text": "is the medicine available.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1518773282
+  },
+  {
+    "id": "24cdcae5-f904-42cc-9ec8-1223b77e7203",
+    "data": [
+      {
+        "text": "Can you tell me whether the medicine is available?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1518773282
+  },
+  {
+    "id": "8c998a8d-309b-41b5-9009-028335970801",
+    "data": [
+      {
+        "text": "paracetamol",
+        "alias": "M_name",
+        "meta": "@medicines",
+        "userDefined": false
+      },
+      {
+        "text": " details",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "433c3107-480f-41b0-ba6b-58ff513c988f",
+    "data": [
+      {
+        "text": "Do you have the medicines?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1518773282
+  },
+  {
+    "id": "e0ab75fa-b04d-44f5-99d2-c140f24530da",
+    "data": [
+      {
+        "text": "aspirine",
+        "alias": "M_name",
+        "meta": "@medicines",
+        "userDefined": false
+      },
+      {
+        "text": " details",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "44b91d7e-11a6-4ef6-8751-16773110e0f5",
+    "data": [
+      {
+        "text": "dolo",
+        "alias": "M_name",
+        "meta": "@medicines",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1518773282
+  },
+  {
+    "id": "1fd63eea-93f1-4e63-8033-43b09df11934",
+    "data": [
+      {
+        "text": "Medicines",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1518773282
+  }
+]

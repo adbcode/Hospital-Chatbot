@@ -1,0 +1,93 @@
+[
+  {
+    "value": "Bangalore",
+    "synonyms": [
+      "Bangalore",
+      "Bengaluru",
+      "bengaluru"
+    ]
+  },
+  {
+    "value": "mangalore",
+    "synonyms": [
+      "mangalore"
+    ]
+  },
+  {
+    "value": "Mangalore",
+    "synonyms": [
+      "Mangalore",
+      "Mangaluru",
+      "mangalore",
+      "mangalore"
+    ]
+  },
+  {
+    "value": "Hassan",
+    "synonyms": [
+      "Hassan",
+      "hassan"
+    ]
+  },
+  {
+    "value": "Mysore",
+    "synonyms": [
+      "Mysore"
+    ]
+  },
+  {
+    "value": "Hyderabad",
+    "synonyms": [
+      "Hyderabad",
+      "hyd",
+      "hyderabad"
+    ]
+  },
+  {
+    "value": "Anantapur",
+    "synonyms": [
+      "Anantapur",
+      "atp",
+      "anantapur",
+      "anantapuram",
+      "anantapuramu"
+    ]
+  },
+  {
+    "value": "manipal",
+    "synonyms": [
+      "manipal"
+    ]
+  },
+  {
+    "value": "goa",
+    "synonyms": [
+      "goa"
+    ]
+  },
+  {
+    "value": "jaipur",
+    "synonyms": [
+      "jaipur"
+    ]
+  },
+  {
+    "value": "salem",
+    "synonyms": [
+      "salem"
+    ]
+  },
+  {
+    "value": "vijayawada",
+    "synonyms": [
+      "vijayawada"
+    ]
+  },
+  {
+    "value": "panaji",
+    "synonyms": [
+      "panaji",
+      "Panaji"
+    ]
+  }
+]

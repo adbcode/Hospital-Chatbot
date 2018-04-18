@@ -1,0 +1,179 @@
+[
+  {
+    "id": "8593d331-faa4-412e-8fe6-ade399459741",
+    "data": [
+      {
+        "text": "KDP",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "bd786362-67ab-4d32-8bb7-fb74a0311df0",
+    "data": [
+      {
+        "text": "mexico",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "d006d4dd-6bf0-48ac-a973-45a038b591c3",
+    "data": [
+      {
+        "text": "HYD",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "060037af-aa76-408f-9524-aa75368b53c8",
+    "data": [
+      {
+        "text": "hospital in ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "87b07934-67d1-48c6-b3dd-49edb19cb417",
+    "data": [
+      {
+        "text": "location in ",
+        "userDefined": false
+      },
+      {
+        "text": "bangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "2d45e5e5-6423-4dc2-a52b-4b9633f2c23d",
+    "data": [
+      {
+        "text": "location in ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "aa328037-a945-4c06-b1ab-216f9970aede",
+    "data": [
+      {
+        "text": "loaction of ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "c55a383a-e40f-4387-9cfa-6a33163181f0",
+    "data": [
+      {
+        "text": "hospital in",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "0cd00cd5-e65f-4a18-8e14-db58c9d876a2",
+    "data": [
+      {
+        "text": "location",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "7aec5306-9bf6-4c7a-bbe9-c42ebd79da78",
+    "data": [
+      {
+        "text": "location in ",
+        "userDefined": false
+      },
+      {
+        "text": "hassan",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "6e922974-f9e0-4111-8648-5fc342aa1e37",
+    "data": [
+      {
+        "text": "Can you tell me the location of Hospital?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  },
+  {
+    "id": "cae923ab-ba95-434d-be28-5b30137ede9d",
+    "data": [
+      {
+        "text": "Where is the hospital located?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523011871
+  }
+]

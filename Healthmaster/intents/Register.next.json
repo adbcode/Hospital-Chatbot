@@ -1,0 +1,70 @@
+{
+  "id": "dc14b487-0e03-4e63-a679-633fa86827e4",
+  "parentId": "eb2b9eca-1cb4-4952-970a-8c840ef99f68",
+  "rootParentId": "eb2b9eca-1cb4-4952-970a-8c840ef99f68",
+  "name": "Register.next",
+  "auto": true,
+  "contexts": [
+    "Register-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Register.new",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "566b807d-d1f4-460c-b364-44b300f8c4a2",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "name",
+          "value": "$name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please enter your name"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "88b42a6c-00db-4c25-bd4c-739b79e71617",
+          "required": true,
+          "dataType": "@sys.number-integer",
+          "name": "age",
+          "value": "$age",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter your age"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "d50b11a1-bac4-4e0c-8e27-4cce1a243066",
+          "required": true,
+          "dataType": "@Gender",
+          "name": "sex",
+          "value": "$sex",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter your gender"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1523973726,
+  "fallbackIntent": false,
+  "events": []
+}

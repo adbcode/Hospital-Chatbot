@@ -1,0 +1,44 @@
+{
+  "id": "c541701e-a46a-4c88-996c-71ecee33106c",
+  "name": "is the medicine available.",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "medicine.availability",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "87b32cfb-7c6e-4dd9-86a4-8eefcf046c0b",
+          "required": true,
+          "dataType": "@medicines",
+          "name": "M_name",
+          "value": "$M_name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please enter the name of the medicine.."
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "The medicine $M_name  details are here."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1523006989,
+  "fallbackIntent": false,
+  "events": []
+}

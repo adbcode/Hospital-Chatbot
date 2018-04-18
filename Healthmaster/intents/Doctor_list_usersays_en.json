@@ -1,0 +1,214 @@
+[
+  {
+    "id": "8fe3cc69-4664-4c8a-afaf-5db61ef4dfba",
+    "data": [
+      {
+        "text": "list of doctors",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "9c69130a-b0b4-43dd-8295-4c8a02ee4582",
+    "data": [
+      {
+        "text": "doctors of ",
+        "userDefined": false
+      },
+      {
+        "text": "ent",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "f4fa9613-93e6-4638-9c12-9689267aaf9e",
+    "data": [
+      {
+        "text": "show doctor details in ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1523975224
+  },
+  {
+    "id": "3054ad95-3fb5-419f-b19b-84a2e59bcd21",
+    "data": [
+      {
+        "text": "list of doctors in ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "2b64d727-7baa-45ea-88df-17a5d8f58c81",
+    "data": [
+      {
+        "text": "doctors in ",
+        "userDefined": false
+      },
+      {
+        "text": "mangalore",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "8b3936f6-817d-425f-aa64-039667e91467",
+    "data": [
+      {
+        "text": "orthopedic",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      },
+      {
+        "text": " doctor",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "45dafbb3-2a37-4d66-82f2-ae35c4962e69",
+    "data": [
+      {
+        "text": "best ",
+        "userDefined": false
+      },
+      {
+        "text": "cardiology",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      },
+      {
+        "text": " doctor in ",
+        "userDefined": false
+      },
+      {
+        "text": "manipal",
+        "alias": "locations",
+        "meta": "@locations",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "6c8cd573-a9d5-46e8-a564-ff43ff4746dd",
+    "data": [
+      {
+        "text": "best doctors for ",
+        "userDefined": false
+      },
+      {
+        "text": "dermatology",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "51bc9d39-c25e-4b37-9015-f63aea3633c7",
+    "data": [
+      {
+        "text": "list of doctors on ",
+        "userDefined": false
+      },
+      {
+        "text": "dentistry",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "0bb4ac71-f9d8-4f9c-a34d-99f1e30f4bef",
+    "data": [
+      {
+        "text": "show list of ",
+        "userDefined": false
+      },
+      {
+        "text": "dentistry",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  },
+  {
+    "id": "c52b05fa-fb73-420c-b00a-d8d12ef92a31",
+    "data": [
+      {
+        "text": "doctors list on ",
+        "userDefined": false
+      },
+      {
+        "text": "dentistry",
+        "alias": "Doc_type",
+        "meta": "@speciality",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523975224
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "id": "9c2c9d0c-789b-415b-b221-638586f8dd70",
+  "name": "appointments",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "appointment.book",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "861b7326-8197-4a95-8155-c705338deb67",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "did",
+          "value": "$did",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter doctor id from the list"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "95222816-a966-411a-930d-de29d31ac1f7",
+          "required": true,
+          "dataType": "@sys.number-integer",
+          "name": "pid",
+          "value": "$pid",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the pid"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "a5abe53e-5bc3-433f-9b8c-2bb26479b5a0",
+          "required": true,
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter the date"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "65304be0-2ebd-4a76-b4db-8c7885d39f88",
+          "required": true,
+          "dataType": "@sys.time",
+          "name": "time",
+          "value": "$time",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter time in multiple of 20 min."
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "7e097730-ceba-4618-af9c-ff7a32df7119",
+          "required": true,
+          "dataType": "@locations",
+          "name": "location",
+          "value": "$location",
+          "isList": false
+        },
+        {
+          "id": "29041a95-8804-4d37-86fd-712c00c22387",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "purpose",
+          "value": "$purpose",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter purpose"
+            }
+          ]
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "ok at  $date on $Time  booked"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1523973931,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "210f4605-5337-4869-91d3-157d78ef6d85",
+    "data": [
+      {
+        "text": "Create an account for me",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523970883
+  },
+  {
+    "id": "e82a5127-ee32-44e1-87b4-2baec72b553c",
+    "data": [
+      {
+        "text": "Add a new user",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523970883
+  },
+  {
+    "id": "432ef608-58dc-44fa-9e2a-d5194358fb68",
+    "data": [
+      {
+        "text": "Create a new user",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523970883
+  },
+  {
+    "id": "2ae3e6da-45db-46e8-a2ac-3d53b36f2f66",
+    "data": [
+      {
+        "text": "Register me",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523970883
+  }
+]

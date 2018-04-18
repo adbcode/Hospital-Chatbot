@@ -1,0 +1,58 @@
+{
+  "id": "3aefb6f0-4c0e-4682-b5ab-2c53f41fd23b",
+  "name": "Doctor_list",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "doctor.speciality",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "763a6e9d-aeb6-40c8-a23c-18d38f205394",
+          "required": true,
+          "dataType": "@speciality",
+          "name": "Doc_type",
+          "value": "$Doc_type",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter specialization of doctor"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "435e03a8-b32e-4e10-8e70-8ca9f6f12ee4",
+          "required": true,
+          "dataType": "@locations",
+          "name": "locations",
+          "value": "$locations",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter the location"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "here is the list $Doc_type"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1523975224,
+  "fallbackIntent": false,
+  "events": []
+}

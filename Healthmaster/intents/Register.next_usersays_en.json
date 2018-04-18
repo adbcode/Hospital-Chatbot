@@ -1,0 +1,36 @@
+[
+  {
+    "id": "a0432cf0-d276-4527-902e-18106f965c3c",
+    "data": [
+      {
+        "text": "Name",
+        "alias": "name",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "15",
+        "alias": "age",
+        "meta": "@sys.number-integer",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "male",
+        "alias": "sex",
+        "meta": "@Gender",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523971845
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "dde4316a-8647-4f90-8ac2-6792412939a2",
+    "data": [
+      {
+        "text": "Hello",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1523973366
+  },
+  {
+    "id": "1c862aaa-629b-4d79-86f3-d1af73672986",
+    "data": [
+      {
+        "text": "Hi",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523973366
+  },
+  {
+    "id": "b06084a1-c348-4dcc-b94e-57b483bb76ff",
+    "data": [
+      {
+        "text": "Good Evening",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523973366
+  },
+  {
+    "id": "ea675aa7-626e-4c68-96d2-ca8cb157770b",
+    "data": [
+      {
+        "text": "Good ",
+        "userDefined": false
+      },
+      {
+        "text": "Afternoon",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523973366
+  },
+  {
+    "id": "0dd9f32a-b134-4206-8c4b-b73f849ec06d",
+    "data": [
+      {
+        "text": "Good Morining",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1523973366
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "id": "b7b58f1f-865f-47aa-b744-fcce90c5dfc3",
+  "name": "LocationOfHospital",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "places",
+      "affectedContexts": [
+        {
+          "name": "LocationOfHospital-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "9e851da0-56f9-49c2-af33-aa250b7c0bf9",
+          "required": true,
+          "dataType": "@locations",
+          "name": "locations",
+          "value": "$locations",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Enter the name of city"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "the hospital is located in so and so place"
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": false,
+        "facebook": false
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1523616960,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "Doctor_list"
+    }
+  ]
+}

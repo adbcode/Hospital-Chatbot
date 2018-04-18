@@ -1,0 +1,45 @@
+{
+  "id": "eb2b9eca-1cb4-4952-970a-8c840ef99f68",
+  "name": "Register",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "register",
+      "affectedContexts": [
+        {
+          "name": "Register-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "2194b6ff-db78-49be-9d1f-d8a31199b1a4",
+          "required": false,
+          "dataType": "@sys.given-name",
+          "name": "name",
+          "value": "$name",
+          "prompts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Please enter your name, age and sex"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1523970926,
+  "fallbackIntent": false,
+  "events": []
+}

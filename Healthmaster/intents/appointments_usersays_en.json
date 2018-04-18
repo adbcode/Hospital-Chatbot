@@ -1,0 +1,136 @@
+[
+  {
+    "id": "4fd11ae8-34c4-4053-9f38-58e740535d16",
+    "data": [
+      {
+        "text": "book an appointment at ",
+        "userDefined": false
+      },
+      {
+        "text": "3.30pm",
+        "alias": "time",
+        "meta": "@sys.time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523972324
+  },
+  {
+    "id": "7f9fbb22-c083-4577-9cf4-e8b35fda1ef1",
+    "data": [
+      {
+        "text": "book appointment for ",
+        "userDefined": false
+      },
+      {
+        "text": "12",
+        "alias": "pid",
+        "meta": "@sys.number-integer",
+        "userDefined": true
+      },
+      {
+        "text": " on ",
+        "userDefined": false
+      },
+      {
+        "text": "23 April",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523972324
+  },
+  {
+    "id": "19357152-a63b-4fb6-acd0-253f68b08f1c",
+    "data": [
+      {
+        "text": "book appointment for ",
+        "userDefined": false
+      },
+      {
+        "text": "12",
+        "alias": "pid",
+        "meta": "@sys.number-integer",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523972324
+  },
+  {
+    "id": "5809d54c-426b-47e6-9380-3926c90fb251",
+    "data": [
+      {
+        "text": "book appointment on ",
+        "userDefined": false
+      },
+      {
+        "text": "23 march",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "5.00am",
+        "alias": "time",
+        "meta": "@sys.time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523972324
+  },
+  {
+    "id": "60938f27-abc2-43dc-ac12-589b320f8133",
+    "data": [
+      {
+        "text": "book appointment on ",
+        "userDefined": false
+      },
+      {
+        "text": "23 march",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523972324
+  },
+  {
+    "id": "bb086016-812a-4045-823c-e076cfa80204",
+    "data": [
+      {
+        "text": "Book an appointment",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1523972324
+  },
+  {
+    "id": "e2b46387-8600-4317-9b53-680e86046f59",
+    "data": [
+      {
+        "text": "book an appoinment",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1523972324
+  }
+]
