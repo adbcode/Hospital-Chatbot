@@ -23,20 +23,6 @@
           "isList": false
         },
         {
-          "id": "447f757e-d740-4321-8d87-97bd1298d7bd",
-          "required": true,
-          "dataType": "@sys.number",
-          "name": "hid",
-          "value": "$hid",
-          "prompts": [
-            {
-              "lang": "en",
-              "value": "Enter hospital id from the list"
-            }
-          ],
-          "isList": false
-        },
-        {
           "id": "861b7326-8197-4a95-8155-c705338deb67",
           "required": true,
           "dataType": "@sys.number",
